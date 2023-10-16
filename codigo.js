@@ -85,10 +85,10 @@ function agregarProducto() {
   // Crear objeto producto
   var producto = {
     title: document.getElementById("titulo").value,
-    price: document.getElementById("precio").value,
+    price: document.getElementById("precio").value.toString(),
     description: document.getElementById("descripcion").value,
-    image: document.getElementById("imagen").value,
-    category: document.getElementById("categoria").value
+    image: document.getElementById("imagen").value.toString(),
+    category: document.getElementById("categoria").value.toString()
   };
 
   // Enviar objeto producto a la API
