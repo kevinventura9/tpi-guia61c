@@ -50,6 +50,7 @@ var fila="<tr><td class='id'></td><td class='foto'></td><td class='price'></td><
 		fotos[nfila].innerHTML="<img src='"+productos[nfila].image+"'>";
 		fotos[nfila].firstChild.setAttribute("onclick","window.open('"+productos[nfila].image+"');" );
 		}
+		eliminar();
 	}
 
 function obtenerProductos() {
@@ -63,6 +64,42 @@ function obtenerProductos() {
 		});
 		listarProductos(data)})
 }
+function eliminar(){
+
+ var table = document.getElementById("tabla");
+ var num_columnas = table.rows[0].cells.length;
+ if (num_columnas<7){
+  
+  var filas = document.getElementsByTagName("tr");
+   for (var i = 1; i < filas.length; i++) {
+     var celda = filas[i].insertCell(-1);
+     var boton = document.createElement("button");
+     boton.innerHTML = "Borrar";
+     boton.onclick = function() {
+      var fila = this.parentNode.parentNode;
+      var id = fila.getElementsByTagName("td")[0].innerHTML;
+      var delresult;
+      fetch("https://retoolapi.dev/r3Jk7w/productos/" + id, 
+      {method: "DELETE"})
+     .then(response=>response.json())
+     .then(data=>delresult=data);
+
+   };
+  celda.appendChild(boton);
+}//for
+
+
+
+
+ }//if
+
+
+
+
+
+}//func
+
+
 
 function ordenarDesc(p_array_json, p_key) {
    p_array_json.sort(function (a, b) {
@@ -84,9 +121,9 @@ function agregarProducto() {
 
   // Crear objeto producto
   var producto = {
-    title: document.getElementById("titulo").value,
+    title: document.getElementById("titulo").value.toString(),
     price: document.getElementById("precio").value.toString(),
-    description: document.getElementById("descripcion").value,
+    description: document.getElementById("descripcion").value.toString(),
     image: document.getElementById("imagen").value.toString(),
     category: document.getElementById("categoria").value.toString()
   };
