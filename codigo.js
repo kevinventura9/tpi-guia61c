@@ -92,17 +92,17 @@ function agregarProducto() {
   };
 
   // Enviar objeto producto a la API
-  var addresult;
-  fetch("https://retoolapi.dev/r3Jk7w/productos", {
-    method: "POST",
-    body: JSON.stringify(producto),
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json; charset=UFT-8',
-    }
-  })
-  .then(response => response.json())
-  .then(data => addresult=data)
+var addresult;
+fetch("https://retoolapi.dev/r3Jk7w/productos",
+{ method:"POST",
+  body: JSON.stringify(producto),
+  headers: {
+     'Accept': 'application/json',
+     'Content-type': 'application/json; charset=UTF-8',
+  }
+})
+.then(response=>response.json())
+.then(data=>addresult=data);
 var mensaje = "El producto ha sido agregado.";
 alert(mensaje);
 obtenerProductos();
