@@ -1,0 +1,105 @@
+form {
+  //display: flex;
+  //flex-direction: column;
+  //flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  //max-width: 200px; /* Agrega esta línea */
+}
+
+label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+button[type="button"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button[type="button"]:hover {
+    background-color:#3e8e41
+}
+
+/* Fuente */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*Color */
+h1 {
+  color: #006400;
+}
+
+/* Espacios en blanco */
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+/* Transiciones */
+button {
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.5s ease;
+}
+
+button:hover {
+  background-color: #006400;
+}
+
+/* Margenes */
+#listado {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+
+#price {
+  cursor: pointer;
+  color: #A98307;
+}
+
+
+
+
+img {width:3cm;height:3cm;cursor:pointer;}
+
+
+li {color:blue;}
+/*si chequea muestra los productos sin cheque desaparecen los productos*/
+input#c1:checked ~ table tbody tr.c1 { display: table-row; }
+input#c1:not(checked) ~ table tbody tr.c1 { display: none; }
+input#c2:checked ~ table tbody tr.c2 { display: table-row; }
+input#c2:not(checked) ~ table tbody tr.c2 { display: none; }
+input#c3:checked ~ table tbody tr.c3 { display: table-row; }
+input#c3:not(checked) ~ table tbody tr.c3 { display: none; }
+input#c4:checked ~ table tbody tr.c4 { display: table-row; }
+input#c4:not(checked) ~ table tbody tr.c4 { display: none; }
